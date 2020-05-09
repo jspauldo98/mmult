@@ -19,16 +19,24 @@ struct matrix {
   double **values;
 };
 
-extern struct matrix parseMatrix(FILE *);
+extern struct matrix *parseMatrix(FILE *);
 /*
  * Returns a matrix given fd of matrix file
  */
 
-extern struct matrix multiplyMatrix(struct matrix, struct matrix);
+extern struct matrix *multiplyMatrix(struct matrix*, struct matrix*);
 /*
  * Multiplies two matrices together and returns the product
  */
 
-extern void printM(struct matrix);
+extern int writeMatrixToFile(struct matrix*, FILE *);
+/*
+ * Writes matrix to specified file
+ * First 4 bytes represent integer number of rows
+ * Next 4 bytes represent integer number of columns
+ * Rest of the file will be 8 byte row by col doubles 
+ */
+
+extern void printM(struct matrix*);
 
 #endif
