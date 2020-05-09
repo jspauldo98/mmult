@@ -14,8 +14,8 @@ RM=/bin/rm -f
 
 .PHONY: tidy clean
 
-mmult: mmult.c matrix.c
-	$(CC) $(CFLAGS) mmult.c matrix.c -o mmult
+mmult: mmult.c
+	$(CC) $(CFLAGS) mmult.c -o mmult
 
 tidy:
 	$(RM) *.o
