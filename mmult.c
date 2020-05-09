@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int main(int argc, char **argv) {
   // // test read
@@ -100,6 +101,8 @@ int main(int argc, char **argv) {
 
   double mp[m * p];
 
+  clock_t begin = clock();
+
   // Mutiply matrices
   int k;
   for (i = 0; i < m; i++) {
@@ -109,6 +112,11 @@ int main(int argc, char **argv) {
       }
     }
   }
+
+  clock_t end = clock();
+
+  double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+  printf("%f%s\n", time_spent, "ms");
 
   // Write product rows and cols to file
   if ((fwrite(&m, 1, sizeof(int), fdOut) == 0) ||
