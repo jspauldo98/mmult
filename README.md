@@ -18,7 +18,7 @@ Use make_mat to generate matrices.
 
 ```bash
 ./make_mat matrix 4 5
-  # Creates 4x5 matrix of random integers file named matrix
+  # Creates 4x5 matrix of random doubles file named matrix
 ```
 
 ## Synopsis
