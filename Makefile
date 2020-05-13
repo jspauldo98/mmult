@@ -15,7 +15,7 @@ RM=/bin/rm -f
 .PHONY: tidy clean
 
 mmult: mmult.c
-	$(CC) $(CFLAGS) mmult.c -o mmult
+	$(CC) $(CFLAGS) mmult.c -o mmult -pthread
 
 tidy:
 	$(RM) *.o
