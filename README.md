@@ -24,21 +24,20 @@ Use make_mat to generate matrices.
 ## Synopsis
 
 ```bash
-./mmult
+./mmult [#threads] [matrix 1] [matrix 2] [outfile]
 ```
 
 ## Description
 
-Concatenate FILE(s) to standard output.
-With no FILE, or when FILE is -, read standard input.
+Multiply matrices to outfile using or not using threading. Specified by args
 
 ## Examples
 ```bash
-./wycat 
-    # read from standard input, write to standard output
+./mmult m1 m2 m3
+    # multiply m1 by m2. Write product to m3 
 
-./wycat f - g 
-    # Output f's contents, then standard input, then g's contents.
+./mmult 10 m1 m2 m3
+    # multiply m1 by m2 using 10 worker threads. Write product to m3
 ```
 
 ## Author
