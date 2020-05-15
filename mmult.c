@@ -211,6 +211,12 @@ int main(int argc, char **argv) {
         }
       }
     }
+
+    if (pthread_attr_destroy(&tattr) != 0 || 
+      pthread_attr_setstacksize(&tattr, size) != 0) {
+      perror("mmult");
+      return -1;
+    }
     t = args.time;
   }
 
